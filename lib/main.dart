@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: HomePage(),
       theme: ThemeData(
+        primaryColor: Colors.teal,
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.deepOrange,
           foregroundColor: Colors.white,
@@ -31,6 +32,32 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.white, Theme.of(context).primaryColor],
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage("images/youness.png"),
+                  ),
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage("images/youness.png"),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(title: Text("Home Page"), centerTitle: true),
       body: Center(
         child: Text(
