@@ -9,7 +9,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomePage());
+    return MaterialApp(
+      home: HomePage(),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.deepOrange,
+          foregroundColor: Colors.white,
+        ),
+        textTheme: TextTheme(
+          bodyMedium: TextStyle(fontSize: 18),
+          bodyLarge: TextStyle(fontSize: 24),
+        ),
+      ),
+    );
   }
 }
 
@@ -19,13 +31,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home Page"),
-        backgroundColor: Colors.teal,
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text("Home Page"), centerTitle: true),
       body: Center(
-        child: Text("DWM ENSET 2026", style: TextStyle(fontSize: 22)),
+        child: Text(
+          "DWM ENSET 2026",
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
       ),
     );
   }
