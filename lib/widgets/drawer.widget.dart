@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_dwm/widgets/drawer/header.widget.dart';
+import 'package:flutter_app_dwm/widgets/drawer.header.widget.dart';
+import 'package:flutter_app_dwm/widgets/drawer.item.widget.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -10,32 +11,20 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         children: [
           MyDrawerHeader(),
-          ListTile(
-            leading: Icon(Icons.settings),
-            trailing: Icon(Icons.arrow_forward_sharp),
-            title: Text("Settings"),
-            onTap: () => {
-              Navigator.pop(context),
-              Navigator.pushNamed(context, "/settings"),
-            },
+          DrawerItem(
+            title: "Settings",
+            icon: Icon(Icons.settings),
+            route: "/settings",
           ),
-          ListTile(
-            leading: Icon(Icons.countertops),
-            trailing: Icon(Icons.arrow_forward_sharp),
-            title: Text("Counter"),
-            onTap: () => {
-              Navigator.pop(context),
-              Navigator.pushNamed(context, "/counter"),
-            },
+          DrawerItem(
+            title: "Counter",
+            icon: Icon(Icons.countertops),
+            route: "/counter",
           ),
-          ListTile(
-            leading: Icon(Icons.home),
-            trailing: Icon(Icons.graphic_eq_sharp),
-            title: Text("Graphics"),
-            onTap: () => {
-              Navigator.pop(context),
-              Navigator.pushNamed(context, "/graphics"),
-            },
+          DrawerItem(
+            title: "Graphics",
+            icon: Icon(Icons.graphic_eq_sharp),
+            route: "/graphics",
           ),
         ],
       ),
