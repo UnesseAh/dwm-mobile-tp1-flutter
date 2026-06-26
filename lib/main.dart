@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_dwm/pages/counter.page.dart';
+import 'package:flutter_app_dwm/pages/graphics.page.dart';
 import 'package:flutter_app_dwm/pages/home.page.dart';
+import 'package:flutter_app_dwm/pages/settings.page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      routes: {
+        "/settings": (context) => SettingsPage(),
+        "/counter": (context) => CounterPage(),
+        "/graphics": (context) => GraphicsPage(),
+        "/": (context) => HomePage(),
+      },
       theme: ThemeData(
         primaryColor: Colors.teal,
         appBarTheme: AppBarTheme(
@@ -19,8 +27,8 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
         textTheme: TextTheme(
-          bodyMedium: TextStyle(fontSize: 18),
-          bodyLarge: TextStyle(fontSize: 24),
+          bodyMedium: TextStyle(fontSize: 12),
+          bodyLarge: TextStyle(fontSize: 22),
         ),
       ),
     );
